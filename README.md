@@ -21,26 +21,26 @@ Parses through all environmental data collected throughout Season 10 and Season 
 ### Linux/Ubuntu
 
 - Open terminal
-- Execute 'xhost +local:root'
-- Execute with 'docker run -it --rm --env="DISPLAY" --env="QT_X11_NO_MITSHM=1" --volume="/tmp/.X11-unix:/tmp/.X11-unix:rw" phytooracle/env_parser'
-- Execute 'xhost -local:root' once finished
+- Execute `xhost +local:root`
+- Execute with `docker run -it --rm --env="DISPLAY" --env="QT_X11_NO_MITSHM=1" --volume="/tmp/.X11-unix:/tmp/.X11-unix:rw" phytooracle/env_parser`
+- Execute `xhost -local:root` once finished
 
 ### MacOS
 
 - Make sure to have XQuarz installed
 - Navigate to the XQuarz settings and activate the option "Allow connections from network clients"
 - Open terminal
-- Execute 'xhost +local:root' OR 'xhost + 127.0.0.1'
-- Execute with 'docker run -e DISPLAY=host.docker.internal:0 phytooracle/env_parser'
-- Execute 'xhost -local:root' OR 'xhost - 127.0.0.1' once finished
+- Execute `xhost +local:root` OR `xhost + 127.0.0.1`
+- Execute with `docker run -e DISPLAY=host.docker.internal:0 phytooracle/env_parser`
+- Execute `xhost -local:root` OR `xhost - 127.0.0.1` once finished
 
 ### Windows 10 with WSL2
 
 - Make sure to be able to execute X11 (refer to [this article](https://virtualizationreview.com/articles/2017/02/08/graphical-programs-on-windows-subsystem-on-linux.aspx) for links on installing X11 on Windows 10)
 - Access Linux subsystem
-- Execute 'xhost +local:root'
-- Execute with 'docker run -it --rm --env="DISPLAY" --env="QT_X11_NO_MITSHM=1" --volume="/tmp/.X11-unix:/tmp/.X11-unix:rw" phytooracle/env_parser'
-- Execute 'xhost -local:root' once finished
+- Execute `xhost +local:root`
+- Execute with `docker run -it --rm --env="DISPLAY" --env="QT_X11_NO_MITSHM=1" --volume="/tmp/.X11-unix:/tmp/.X11-unix:rw" phytooracle/env_parser`
+- Execute `xhost -local:root` once finished
 
 ## Instructions
 
