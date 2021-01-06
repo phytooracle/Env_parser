@@ -9,10 +9,23 @@ COPY requirements.txt packages.txt /home/extractor/
 
 USER root
 
+ENV IRODS_USER=anonymous
+
+RUN apt-get update && apt-get install -y \
+    apt-transport-https \
+    gcc \
+    gnupg \
+    wget 
+
+RUN wget https://files.renci.org/pub/irods/releases/4.1.10/ubuntu14/irods-icommands-4.1.10-ubuntu14-x86_64.deb \
+    && apt-get install -y ./irods-icommands-4.1.10-ubuntu14-x86_64.deb
+
 RUN [ -s /home/extractor/packages.txt ] && \
     (echo 'Installing packages' && \
         apt-get update && \
         cat /home/extractor/packages.txt | xargs apt-get install -y --no-install-recommends && \
+        mkdir -p /root/.irods && \
+        echo "{ \"irods_zone_name\": \"iplant\", \"irods_host\": \"data.cyverse.org\", \"irods_port\": 1247, \"irods_user_name\": \"$IRODS_USER\" }" > /root/.irods/irods_environment.json && \
         rm /home/extractor/packages.txt && \
         apt-get autoremove -y && \
         apt-get clean && \
