@@ -2,7 +2,6 @@
 
 Parses through all environmental data collected throughout Season 10 and Season 11. This software is a GUI used for observing environmental data.
 
-
 ## Hardware Requirements
 
 - Internet connection
@@ -10,7 +9,6 @@ Parses through all environmental data collected throughout Season 10 and Season 
 
 ## Software Requirements
 
-- iRODS account
 - Docker
 - Linux/Ubuntu system or
 - MacOS system or
@@ -46,3 +44,7 @@ Parses through all environmental data collected throughout Season 10 and Season 
 
 This is the Environmental parser for the gantry scanalyzer data. Please select the season and day you are interested in viewing and select "prep data"; This will ensure data is downloaded and uncompressed. Please give up to 10 minutes to donwload and uncompress your data, depending on your internet connection. When data is ready, press "load data", please wait up to 1-2 minutes. Once loaded choose "day median" to view median of all collected environmental variables. If you are interested in a specific data at a specific time, select which environmental variable you are interested in and press "show graph". Please keep in mind that the data might take a moment to load. Thank you for using the Environmental parser.
 
+## Improvability
+
+- As of now, the parser does not save the generated graphs; this functionality can be added upon request.
+- Available dates are restricted to S10 and S11 of the scanalyzer collected environmental data. Data will be added according to future scan seasons.
